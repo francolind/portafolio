@@ -1,0 +1,19 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+.App{
+  background-color: #261B72;
+  overflow-x: hidden;
+}
+
+
