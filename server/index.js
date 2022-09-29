@@ -14,9 +14,7 @@ app.use(express.json());
 
 app.use(router)
 
-app.get("/", (req, res) => {
-    console.log("Home route");
-});
+
 
 app.use((req, res, next)=> {
     res.status(404).json({
