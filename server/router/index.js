@@ -1,18 +1,17 @@
 import { Router } from "express";
 import nodemailer from "nodemailer";
-import {MAIL_HOST, MAIL_PORT, MAIL_USER, MAIL_PASS } from './config.js'
 import cors from 'cors';
 const router= Router();
 
  router.post('/email',cors(), async(req, res)=> {
         const{ name, email, message} = req.body;
             const transporter = nodemailer.createTransport({
-            host: MAIL_HOST,
-            port: MAIL_PORT,
+            host: 'smtp.mailtrap.io',
+            port: '2525',
             secure: false,
             auth: {
-                user:MAIL_USER,
-                pass:MAIL_PASS,
+                user:'47a1d6f3a1cfc2',
+                pass:'6cc57d358a43bd',
             },
             tls: {
                 rejectUnauthorized:false
@@ -20,7 +19,7 @@ const router= Router();
         });
 
          const info = await transporter.sendMail({
-            from:'to email<from@example.com>',
+            From: 'Magic Elves <from@example.com>',
             to:'francolind95.fl@gmail.com',
             subject:'website contact form',
             html: `
