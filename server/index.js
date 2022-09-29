@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use(express.urlencoded({extended:false}));
 
-app.get('/',(req, res )=> res.send('<h1>hola desde express</h1>'));
+app.get('/', cors(),(req, res )=> res.send('<h1>hola desde express</h1>'));
 
 app.use(express.json());
 
