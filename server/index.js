@@ -1,9 +1,7 @@
 import express from 'express';
 import router from './router/index.js';
 import cors from 'cors';
-import path from 'path';
-import * as url from 'url';
-import {PORT} from './router/config.js'
+import {PORT} from './router/config.js';
 
 const app = express();
 app.use(cors());
@@ -14,7 +12,7 @@ app.use(express.json());
 
 app.use(router)
 
-app.get('/', (req, res )=> res.send('<h1>hola desde express</h1>'))
+app.get('/',cors,(req, res )=> res.send('<h1>hola desde express</h1>'));
 
 app.use((req, res, next)=> {
     res.status(404).json({
