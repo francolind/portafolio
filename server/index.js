@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(router)
 
-
+app.get('/', (req, res )=> res.send('<h1>hola desde express</h1>'))
 
 app.use((req, res, next)=> {
     res.status(404).json({
